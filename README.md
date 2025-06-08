@@ -56,6 +56,10 @@ pip install -r requirements.txt
    # or
    .\venv\Scripts\activate  # On Windows
 
+   # Upgrade pip and install build tools
+   python -m pip install --upgrade pip
+   pip install wheel setuptools Cython
+
    # Install dependencies
    pip install -r requirements.txt
    ```
