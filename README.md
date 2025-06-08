@@ -64,13 +64,33 @@ pip install -r requirements.txt
    pip install -r requirements.txt
    ```
 
-3. **Run the application**
+3. **Run the application locally**
    ```bash
    python app.py
    ```
 
 4. **Access the application**
    Open your browser and navigate to `http://localhost:5000`
+
+## 🌐 GitHub Pages Deployment
+
+The application is automatically deployed to GitHub Pages when changes are pushed to the main branch. The site is available at: `https://[your-username].github.io/loansage/`
+
+To manually deploy:
+
+1. **Build static files**
+   ```bash
+   python build_static.py
+   ```
+
+2. **Commit and push changes**
+   ```bash
+   git add .
+   git commit -m "Update static files"
+   git push origin main
+   ```
+
+The GitHub Actions workflow will automatically build and deploy your site to GitHub Pages.
 
 ## 📈 Statistical Overview
 

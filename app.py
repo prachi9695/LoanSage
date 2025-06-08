@@ -2,7 +2,8 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+import json
 
 # Create a Flask application
 app = Flask(__name__)
@@ -71,6 +72,15 @@ def predict():
     result = 'Eligible for Loan' if prediction[0] == 1 else 'Not Eligible for Loan'
     
     return render_template('result.html', result=result)
+
+# Add URL generators for Flask-Frozen
+@app.route('/index.html')
+def index():
+    return render_template('index.html')
+
+@app.route('/result.html')
+def result():
+    return render_template('result.html', result='Not Eligible for Loan')
 
 # Run the Flask app
 if __name__ == '__main__':
