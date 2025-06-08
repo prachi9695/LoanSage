@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .eligible {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .not-eligible {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Loan Eligibility Checker</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form id="loanForm" onsubmit="return checkEligibility(event)">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" class="form-control" id="age" name="age" required min="18" max="60">
+                    </div>
+                    <div class="form-group">
+                        <label for="income">Annual Income ($)</label>
+                        <input type="number" class="form-control" id="income" name="income" required min="20000" max="120000">
+                    </div>
+                    <div class="form-group">
+                        <label for="loan_amount">Loan Amount ($)</label>
+                        <input type="number" class="form-control" id="loan_amount" name="loan_amount" required min="5000" max="50000">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Check Eligibility</button>
+                </form>
+                <div id="result" class="result text-center"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkEligibility(event) {
+            event.preventDefault();
+            
+            const age = parseInt(document.getElementById('age').value);
+            const income = parseFloat(document.getElementById('income').value);
+            const loanAmount = parseFloat(document.getElementById('loan_amount').value);
+            
+            // Simple eligibility rule
+            const isEligible = income > 50000 && loanAmount < 0.3 * income;
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            
+            if (isEligible) {
+                resultDiv.className = 'result eligible text-center';
+                resultDiv.innerHTML = '<h4>Congratulations! You are eligible for the loan.</h4>';
+            } else {
+                resultDiv.className = 'result not-eligible text-center';
+                resultDiv.innerHTML = '<h4>Sorry, you are not eligible for the loan.</h4>';
+            }
+            
+            return false;
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html> 
