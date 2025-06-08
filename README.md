@@ -1,14 +1,14 @@
 # LoanSage: AI-Powered Loan Eligibility Predictor
 
-A sophisticated web application that leverages machine learning to provide instant loan eligibility predictions. By analyzing key financial and demographic factors, LoanSage offers users quick insights into their loan approval chances.
+A simple and efficient web application that provides instant loan eligibility predictions. By analyzing key financial and demographic factors, LoanSage offers users quick insights into their loan approval chances.
 
 ## 🌟 Features
 
 - **Real-time Predictions**: Instant loan eligibility assessment
-- **Machine Learning Powered**: Utilizes decision tree algorithms for accurate predictions
+- **Simple Rules**: Clear and transparent eligibility criteria
 - **User-friendly Interface**: Simple and intuitive web interface
-- **Comprehensive Analysis**: Detailed insights into loan approval factors
-- **Data Visualization**: Interactive charts and statistical analysis
+- **No Server Required**: Works entirely in your browser
+- **Mobile Responsive**: Works on all devices
 
 ## 📊 Key Insights
 
@@ -19,26 +19,9 @@ A sophisticated web application that leverages machine learning to provide insta
 
 ## 🛠️ Technical Stack
 
-- **Backend**: Python, Flask
-- **Machine Learning**: scikit-learn
-- **Data Processing**: pandas, numpy
-- **Visualization**: matplotlib, seaborn
-- **Model Persistence**: pickle5
-
-## 📋 Requirements
-
-All required packages are listed in `requirements.txt`. To install them, run:
-
-```bash
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # On Linux/Mac
-# or
-.\venv\Scripts\activate  # On Windows
-
-# Install dependencies
-pip install -r requirements.txt
-```
+- **Frontend**: HTML5, CSS3, JavaScript
+- **UI Framework**: Bootstrap 4.5
+- **Deployment**: GitHub Pages
 
 ## 🚀 Getting Started
 
@@ -48,49 +31,22 @@ pip install -r requirements.txt
    cd loansage
    ```
 
-2. **Set up virtual environment and install dependencies**
+2. **Run the application**
+   Simply open `index.html` in your web browser:
    ```bash
-   # Create and activate virtual environment
-   python -m venv venv
-   source venv/bin/activate  # On Linux/Mac
-   # or
-   .\venv\Scripts\activate  # On Windows
-
-   # Upgrade pip and install build tools
-   python -m pip install --upgrade pip
-   pip install wheel setuptools Cython
-
-   # Install dependencies
-   pip install -r requirements.txt
+   # On Linux
+   xdg-open index.html
+   
+   # On Windows
+   start index.html
+   
+   # On Mac
+   open index.html
    ```
 
-3. **Run the application locally**
-   ```bash
-   python app.py
-   ```
-
-4. **Access the application**
-   Open your browser and navigate to `http://localhost:5000`
-
-## 🌐 GitHub Pages Deployment
-
-The application is automatically deployed to GitHub Pages when changes are pushed to the main branch. The site is available at: `https://[your-username].github.io/loansage/`
-
-To manually deploy:
-
-1. **Build static files**
-   ```bash
-   python build_static.py
-   ```
-
-2. **Commit and push changes**
-   ```bash
-   git add .
-   git commit -m "Update static files"
-   git push origin main
-   ```
-
-The GitHub Actions workflow will automatically build and deploy your site to GitHub Pages.
+3. **Access the application**
+   - Locally: Open `index.html` in your browser
+   - Online: Visit `https://[your-username].github.io/loansage/`
 
 ## 📈 Statistical Overview
 
@@ -101,14 +57,6 @@ The GitHub Actions workflow will automatically build and deploy your site to Git
 | Min       | 18.0   | 20,060.0   | 5,097.0     | 0.0      |
 | Median    | 40.0   | 69,210.5   | 28,562.0    | 0.0      |
 | Max       | 59.0   | 119,986.0  | 49,976.0    | 1.0      |
-
-## 📊 Data Visualization
-
-The application provides comprehensive visualizations:
-
-- **Distribution Analysis**: Histograms for age, income, and loan amount
-- **Income vs. Eligibility**: Boxplots showing the relationship between income and loan approval
-- **Interactive Charts**: Real-time visualization of prediction results
 
 ## 🤝 Contributing
 
